@@ -92,14 +92,12 @@ Group by Age_Range
 Order by Total_revenue;
 
 -- 2. Find the percentage of male and female customers.
-SELECT 
-  gender,
-  COUNT(*) AS total_count,
-  ROUND(COUNT(*) / (SELECT COUNT(*) FROM customers) * 100, 2) AS percentage
-FROM 
-  customers
-GROUP BY 
-  gender;
+Select gender, 
+  Count(gender) AS Total_count, 
+  Round(Count(gender) / (Select Count(gender) From customers) * 100, 2) AS percentage
+From customers
+Group by gender;
+
 
 
 
